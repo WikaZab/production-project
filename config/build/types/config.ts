@@ -3,6 +3,7 @@ export interface BuildPaths {
     entry: string; //путь до энтрипойнт
     build:string; //путь до папки со сборкой
     html: string; //путь до файла html
+    src: string;
 
 }
 export interface BuildEnv {
