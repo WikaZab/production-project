@@ -1,8 +1,8 @@
-export type BuildMode = 'production' | 'development'; //тип для свойста мода 2 значения
+export type BuildMode = 'production' | 'development'; // тип для свойста мода 2 значения
 export interface BuildPaths {
-    entry: string; //путь до энтрипойнт
-    build:string; //путь до папки со сборкой
-    html: string; //путь до файла html
+    entry: string; // путь до энтрипойнт
+    build:string; // путь до папки со сборкой
+    html: string; // путь до файла html
     src: string;
 
 }
@@ -12,7 +12,7 @@ export interface BuildEnv {
 }
 export interface BuildOptions {
     mode: BuildMode;
-    paths: BuildPaths; //св-во пути
+    paths: BuildPaths; // св-во пути
     isDev: boolean;
     port: number;
 }
