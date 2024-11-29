@@ -1,14 +1,4 @@
 .lds-ellipsis {
-    /* change color here */
-    color: var(--inverted-bg-color);
-}
-
-.lds-ellipsis,
-.lds-ellipsis div {
-    box-sizing: border-box;
-}
-
-.lds-ellipsis {
     display: inline-block;
     position: relative;
     width: 80px;
@@ -17,9 +7,9 @@
 
 .lds-ellipsis div {
     position: absolute;
-    top: 33.33333px;
-    width: 13.33333px;
-    height: 13.33333px;
+    top: 33.3px;
+    width: 13.3px;
+    height: 13.3px;
     border-radius: 50%;
     background: currentcolor;
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
