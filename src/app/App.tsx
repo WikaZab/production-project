@@ -6,8 +6,9 @@ import { Navbar } from 'widgets/Navbar';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Sidebar } from 'widgets/Sidebar';
 
-const App = () => {
+function App() {
     const { theme } = useTheme();
+
     return (
         <div className={classNames('app', {}, [theme])}>
             <Suspense fallback="">
@@ -19,6 +20,6 @@ const App = () => {
             </Suspense>
         </div>
     );
-};
+}
 
 export default App;

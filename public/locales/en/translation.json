@@ -1,5 +1,8 @@
 {
   "Привет": "Hello",
   "Язык": "EN",
-  "Главная": "Main"
+  "Главная": "Main",
+  "Страница не найдена": "Not Found Page",
+  "Произошла непредвиденная ошибка": "An unexpected error occurred",
+  "Обновить страницу": "Refresh page"
 }
