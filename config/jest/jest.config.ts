@@ -3,6 +3,8 @@
  * https://jestjs.io/docs/configuration
  */
 
+import path from 'path';
+
 export default {
     clearMocks: true,
     testEnvironment: 'jsdom',
@@ -13,6 +15,7 @@ export default {
     moduleDirectories: [
         'node_modules',
     ],
+    setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'], // jest dom
 
     moduleFileExtensions: [
         'js',
@@ -22,10 +25,17 @@ export default {
         'json',
         'node',
     ], // расширение файлов дл модулей
+    modulePaths: [
+        '<rootDir>src',
+    ],
     rootDir: '../../', // тк конфиг не в корне проекта
     testMatch: [
         '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
     ], // регулрные выражения где файлы с тестами
+    moduleNameMapper: {
+        '\\.(s?css)$': 'identity-obj-proxy',
+        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+    },
 
     // All imported modules in your tests should be mocked automatically
     // automock: false,
