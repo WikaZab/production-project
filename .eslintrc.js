@@ -49,6 +49,7 @@ module.exports = {
             },
         ],
         'max-len': ['error', { ignoreComments: true, code: 100 }],
+        'comma-dangle': 'off',
     },
     globals: {
         __IS_DEV__: true,

@@ -1,0 +1,32 @@
+import type { StorybookConfig } from "@storybook/react-webpack5";
+
+const config: { stories: string[]; framework: { name: string; options: { builder: { useSWC: boolean } } }; addons: string[]; swc: () => { jsc: { transform: { react: { runtime: string } } } } } = {
+  stories: [
+    "../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
+  ],
+  addons: [
+    "@storybook/addon-webpack5-compiler-swc",
+    "@storybook/addon-onboarding",
+    "@storybook/addon-essentials",
+    "@chromatic-com/storybook",
+    "@storybook/addon-interactions",
+  ],
+  framework: {
+    name: "@storybook/react-webpack5",
+    options: {
+      builder: {
+        useSWC: true
+      }
+    },
+  },
+  swc: () => ({
+    jsc: {
+      transform: {
+        react: {
+          runtime: 'automatic'
+        }
+      }
+    }
+  }),
+};
+export default config;
