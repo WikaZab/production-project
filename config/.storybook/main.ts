@@ -1,4 +1,3 @@
-import type { StorybookConfig } from "@storybook/react-webpack5";
 
 const config: { stories: string[]; framework: { name: string; options: { builder: { useSWC: boolean } } }; addons: string[]; swc: () => { jsc: { transform: { react: { runtime: string } } } } } = {
   stories: [
@@ -10,6 +9,7 @@ const config: { stories: string[]; framework: { name: string; options: { builder
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
+    "@storybook/addon-themes"
   ],
   framework: {
     name: "@storybook/react-webpack5",
@@ -29,4 +29,5 @@ const config: { stories: string[]; framework: { name: string; options: { builder
     }
   }),
 };
+
 export default config;

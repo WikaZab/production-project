@@ -41,7 +41,6 @@ export const Clear: Story = {
 export const Outlined: Story = {
     args: {
         children: 'Button',
-        theme: ThemeButton.OUTLINE
-
+        theme: ThemeButton.OUTLINE,
     },
 };
