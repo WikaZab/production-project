@@ -1,50 +1,45 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
 import 'app/styles/index.scss';
-
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Button, ThemeButton } from './Button';
 
-const meta: Meta<typeof Button> = {
-    title: 'shared/Button',
-    component: Button,
+const meta: Meta<typeof AppLink> = {
+    title: 'shared/AppLink',
+    component: AppLink,
 
     argTypes: {
         style: {
             backgroundColor: { control: 'color' },
         },
     },
-    args: { onClick: fn() },
+    args: {
+        to: '/',
+    }
 };
 
 export default meta;
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof AppLink>;
 
 export const Primary: Story = {
     args: {
         children: 'Butt',
-        title: 'test',
-        type: 'button',
-        style: {
-            backgroundColor: 'red',
-            padding: '20px',
-        }
+        theme: AppLinkTheme.PRIMARY,
     },
     decorators: [ThemeDecorator(Theme.Normal)],
 };
 
-export const Clear: Story = {
+export const Secondary: Story = {
     args: {
         children: 'Text',
-        theme: ThemeButton.CLEAR
+        theme: AppLinkTheme.SECONDARY,
     },
-    decorators: [ThemeDecorator(Theme.Dark)],
+    decorators: [ThemeDecorator(Theme.Normal)],
 };
-export const Outlined: Story = {
+export const Red: Story = {
     args: {
         children: 'Button',
-        theme: ThemeButton.OUTLINE,
+        theme: AppLinkTheme.RED,
     },
     decorators: [ThemeDecorator(Theme.Normal)],
 };
