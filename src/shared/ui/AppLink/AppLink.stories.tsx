@@ -26,7 +26,7 @@ export const Primary: Story = {
         children: 'Butt',
         theme: AppLinkTheme.PRIMARY,
     },
-    decorators: [ThemeDecorator(Theme.Normal)],
+    // decorators: [ThemeDecorator(Theme.Normal)],
 };
 
 export const Secondary: Story = {
@@ -34,12 +34,12 @@ export const Secondary: Story = {
         children: 'Text',
         theme: AppLinkTheme.SECONDARY,
     },
-    decorators: [ThemeDecorator(Theme.Normal)],
+    // decorators: [ThemeDecorator(Theme.Normal)],
 };
 export const Red: Story = {
     args: {
         children: 'Button',
         theme: AppLinkTheme.RED,
     },
-    decorators: [ThemeDecorator(Theme.Normal)],
+    // decorators: [ThemeDecorator(Theme.Normal)],
 };

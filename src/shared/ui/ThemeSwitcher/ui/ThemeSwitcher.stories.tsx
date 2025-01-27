@@ -17,10 +17,10 @@ type Story = StoryObj<typeof ThemeSwitcher>;
 
 export const Light: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.Normal)],
+    // decorators: [ThemeDecorator(Theme.Normal)],
 };
 
 export const Dark: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.Dark)],
+    // decorators: [ThemeDecorator(Theme.Dark)],
 };
