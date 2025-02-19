@@ -3,6 +3,7 @@ import React, {
     ReactNode, useCallback, useEffect, useRef, useState
 } from 'react';
 import { Portal } from 'shared/ui/Portal/Portal';
+import { useTheme } from 'app/providers/ThemeProvider';
 import cls from './Modal.module.scss';
 
 interface ModalProps {
@@ -30,6 +31,7 @@ export const Modal = (props: ModalProps) => {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
     };
+    const { theme } = useTheme();
     // при нажатии на заблюренное закрытие
     const CloseHandler = useCallback(() => {
         if (onClose) {
@@ -62,7 +64,7 @@ export const Modal = (props: ModalProps) => {
     }, [isOpen, onKeyDown]);
 
     return (
-        <div className={classNames(cls.Modal, mods, [className])}>
+        <div className={classNames(cls.Modal, mods, [className, theme])}>
             <div className={cls.overlay} onClick={CloseHandler}>
                 <div
                     className={cls.content}
