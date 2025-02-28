@@ -82,6 +82,7 @@
     "@reduxjs/toolkit": "^1.8.0",
     "@svgr/webpack": "^6.2.1",
     "@types/ws": "^8.5.4",
+    "axios": "^0.26.1",
     "css-loader": "^6.6.0",
     "file-loader": "^6.2.0",
     "i18next": "^21.6.11",

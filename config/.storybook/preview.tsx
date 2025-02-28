@@ -1,6 +1,5 @@
 import type {Preview, ReactRenderer} from "@storybook/react";
 import 'app/styles/index.scss';
-import {ThemeDecorator} from "../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import {Theme} from "../../src/app/providers/ThemeProvider";
 import {RouterDecorator} from "../../src/shared/config/storybook/RouterDecorator/RouterDecorator";
 import {withThemeByClassName} from "@storybook/addon-themes";
@@ -16,7 +15,7 @@ export const preview: Preview = {
     },
   },
 };
-//способ добавления декоратора или как ниже можно
+//способ добавления декоратора ИЛИ как ниже можно
 // export default {
 //   decorators: [RouterDecorator],
 // };
@@ -25,15 +24,15 @@ export const preview: Preview = {
 export const decorators = [
   withThemeByClassName<ReactRenderer>({
     themes: {
-      light: 'app normal',
-      dark: 'app dark',
+      light: 'app light_theme',
+      dark: 'app dark_theme',
     },
-    defaultTheme: 'app normal'
+    defaultTheme: 'light',
   }),
     // это роуты чтоб работали везде
     RouterDecorator,
 ];
-
+//это пуговка переключатель
 export const globalTypes = {
   theme: {
     name: 'Theme',

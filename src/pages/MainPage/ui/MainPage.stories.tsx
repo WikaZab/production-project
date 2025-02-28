@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import 'app/styles/index.scss';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import MainPage from 'pages/MainPage/ui/MainPage';
+import MainPage from '../../MainPage/ui/MainPage';
 
 const meta: Meta<typeof MainPage> = {
     title: 'pages/MainPage',
@@ -17,10 +17,10 @@ type Story = StoryObj<typeof MainPage>;
 
 export const Light: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.Normal)],
+    // decorators: [ThemeDecorator(Theme.Normal)],
 };
 
 export const Dark: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.Dark)],
+    // decorators: [ThemeDecorator(Theme.Dark)],
 };
