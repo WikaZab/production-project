@@ -27,3 +27,10 @@ export const Dark: Story = {
     })]
     // decorators: [ThemeDecorator(Theme.Dark)],
 };
+export const AuthNavbar: Story = {
+    args: {},
+    decorators: [StoreDecorator({
+        user: { authData: {} },
+    })]
+    // decorators: [ThemeDecorator(Theme.Dark)],
+};
