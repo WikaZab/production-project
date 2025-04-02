@@ -22,7 +22,7 @@ export function buildPlugins({ paths, isDev }: BuildOptions):
         new webpack.HotModuleReplacementPlugin(),
         new BundleAnalyzerPlugin({
         // не будет каждый раз запускаться
-            openAnalyzer: false,
+            openAnalyzer: true,
         }),
 
     ];
