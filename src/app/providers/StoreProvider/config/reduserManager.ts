@@ -1,10 +1,10 @@
 import {
     AnyAction, combineReducers, Reducer, ReducersMapObject
 } from '@reduxjs/toolkit';
-import { ReduserManager, StateSchema, StateShemaKey } from './StateSchema';
+import { ReducerManager, StateSchema, StateShemaKey } from './StateSchema';
 
 export function createReducerManager(initialReducers:ReducersMapObject<StateSchema>):
-    ReduserManager {
+    ReducerManager {
     const reducers = { ...initialReducers };
     let combinedReducer = combineReducers(reducers);
     let keysToRemove: Array<StateShemaKey> = [];

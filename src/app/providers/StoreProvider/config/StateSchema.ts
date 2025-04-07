@@ -8,16 +8,18 @@ import {
     Reducer,
     ReducersMapObject
 } from '@reduxjs/toolkit';
+import { ProfileShema } from 'entities/Profile';
 
 export interface StateSchema {
     counter: CounterShema;
     user: UserSchema;
     loginForm?: LoginSchema;
+    profile?: ProfileShema;
 }
 
 export type StateShemaKey = keyof StateSchema;
 
-export interface ReduserManager {
+export interface ReducerManager {
     getReducerMap: () => ReducersMapObject<StateSchema>;
     reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
     add: (key: StateShemaKey, reducer: Reducer) => void;
@@ -25,5 +27,5 @@ export interface ReduserManager {
 }
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema>{
-    reducerManager: ReduserManager;
+    reducerManager: ReducerManager;
 }
