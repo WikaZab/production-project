@@ -42,7 +42,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         onChangeCurrency,
         onChangeCountry,
     } = props;
-    const { t } = useTranslation();
+    const { t } = useTranslation('profile');
     // состояние загрузки
     if (isLoading) {
         return (
@@ -68,6 +68,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     const mods:Mods = {
         [cls.editing]: !readonly,
+        [cls.readonly]: readonly,
     };
     // при успешной загрузке
     return (
@@ -102,7 +103,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 />
                 <Input
                     value={data?.city}
-                    placeholder={t('Ваш город')}
+                    placeholder={t('Город')}
                     className={cls.input}
                     onChange={onChangeCity}
                     readonly={readonly}

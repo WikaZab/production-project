@@ -1,14 +1,20 @@
 {
-  "Профиль пользователя": "User profile",
+  "Профиль": "Profile",
   "Редактировать": "Edit",
-  "Ваше имя": "Your name",
   "Ваша фамилия": "Your lastname",
-  "Произошла ошибка при загрузке пользователя!": "Error loading user profile",
-  "Попробуйте обновить страницу!": "Try refreshing the page!",
+  "Ваше имя": "Your name",
+  "Произошла ошибка при загрузке профиля": "Upload error",
+  "Попробуйте обновить страницу": "Try to update page",
+  "Отменить": "Cancel",
   "Сохранить": "Save",
-  "Отмена": "Cancel",
+  "Город": "City",
   "Ваш возраст": "Your age",
-  "Ваш город": "Your city",
-  "Введите имя пользователя": "Enter your username",
-  "Введите ссылку на аватар": "Enter the link to the avatar"
+  "Имя пользователя": "Username",
+  "Введите имя пользователя": "Input username",
+  "Введите ссылку на аватар": "Input avatar link",
+  "Имя и фамилия обязательные поля": "First and lastname are required fields",
+  "Некорректный возраст": "Incorrect age",
+  "Некорректная страна": "Incorrect country",
+  "Данные не указаны": "No data available",
+  "Ошибка сервера при сохранении": "Server error while saving"
 }

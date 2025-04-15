@@ -56,9 +56,7 @@ export const Input = memo((props: InputProps) => {
         setCaretPosition(e?.target?.selectionStart || 0);
     };
     // визуализация дл чтение или редакт
-    const mods:Mods = {
-        [cls.readonly]: readonly,
-    };
+    const mods:Mods = {};
     return (
         <div
             className={classNames(cls.InputWrapper, mods, [className])}

@@ -1,0 +1,22 @@
+{
+  "throw error": "throw error",
+  "Ваш возраст": "You age",
+  "Ваш город": "You city",
+  "Ваша фамилия": "You lastname",
+  "Ваше имя": "You name",
+  "Введите имя пользователя": "enter username",
+  "Введите логин": "Username",
+  "Введите пароль": "Password",
+  "Введите ссылку на аватар": "Enter avatar link",
+  "Вы ввели неверный логин или пароль": "Invalid username or password",
+  "Город": "",
+  "Отмена": "Cancel",
+  "Попробуйте обновить страницу!": "Try refreshing the page!",
+  "Произошла ошибка при загрузке пользователя!": "Error loading user profile",
+  "Профиль пользователя": "Profile user",
+  "Редактировать": "Укажите страну",
+  "Сохранить": "Save",
+  "Укажите валюту": "Currency",
+  "Укажите страну": "Country",
+  "Форма авторизации": "Sign in"
+}

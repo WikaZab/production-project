@@ -3,6 +3,7 @@ import 'app/styles/index.scss';
 import { Sidebar } from 'widgets/Sidebar';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 
 const meta: Meta<typeof Sidebar> = {
     title: 'wigets/Sidebar',
@@ -15,10 +16,25 @@ type Story = StoryObj<typeof Sidebar>;
 
 export const Light: Story = {
     args: {},
-    // decorators: [ThemeDecorator(Theme.Normal)],
+    decorators: [
+        // ThemeDecorator(Theme.Normal),
+        StoreDecorator({
+            user: { authData: {} }
+        })
+    ]
 };
 
-export const Dark: Story = {
+// export const Dark: Story = {
+//     args: {},
+// decorators: [ThemeDecorator(Theme.Dark)],
+// };
+
+export const NoAuth: Story = {
     args: {},
-    // decorators: [ThemeDecorator(Theme.Dark)],
+    decorators: [
+        // ThemeDecorator(Theme.Dark),
+        StoreDecorator({
+            user: {}
+        })
+    ]
 };

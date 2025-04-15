@@ -21,6 +21,7 @@ export default (env: BuildEnv) => {
         isDev,
         port: PORT,
         apiUrl,
+        project: 'frontend',
     }); // после: указываем тип из вебпака
 
     return config;

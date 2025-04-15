@@ -13,7 +13,7 @@ interface ProfilePageHeaderProps {
 }
 
 export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('profile');
     const dispatch = useAppDispatch();
     const readonly = useSelector(getProfileReadonly);
     const onEdit = useCallback(() => {
@@ -24,12 +24,11 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
     }, [dispatch]);
     const onSave = useCallback(() => {
         dispatch(updateProfileData());
-        dispatch(profileActions.setReadOnly(true));
     }, [dispatch]);
 
     return (
         <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
-            <Text title={t('Профиль пользователя')} />
+            <Text title={t('Профиль')} />
             {readonly
                 ? (
                     <Button
