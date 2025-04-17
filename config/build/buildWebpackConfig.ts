@@ -14,6 +14,7 @@ export function buildWebpackConfig(options: BuildOptions) : webpack.Configuratio
             filename: '[name].[contenthash].js', // название файла сборки [динамическое название], для кеширования в браузере, без перезагрузки с сервера,чтобы с изменениями не выкатил старую весию приложения
             path: paths.build, // куда и как пойдет сборка нашего приложения
             clean: true, // очищаем файлы после сборки ненужные
+            publicPath: '/',
         },
         plugins: buildPlugins(options), // вызов функции с плагинами из билдплагинс
         module: {
