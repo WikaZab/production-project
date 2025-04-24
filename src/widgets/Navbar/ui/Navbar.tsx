@@ -35,7 +35,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
             <div className={classNames(cls.Navbar, {}, [className])}>
                 <div className={cls.links}>
                     <Button
-                        theme={ButtonTheme.CLEAR}
+                        theme={ButtonTheme.PRIMARY}
                         className={cls.links}
                         onClick={onLogout}
                     >
@@ -51,7 +51,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         <div className={classNames(cls.Navbar, {}, [className])}>
             <div className={cls.links}>
                 <Button
-                    theme={ButtonTheme.CLEAR}
+                    theme={ButtonTheme.PRIMARY}
                     className={cls.links}
                     onClick={onShowModal}
                 >

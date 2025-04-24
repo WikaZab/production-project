@@ -11,7 +11,7 @@ export function buildLoaders(options: BuildOptions) : webpack.RuleSetRule[] {
     };
     const babelLoader = buildBabelLoader(options);
 
-    const scssLoader = buildCssLoader(options);
+    const scssLoader = buildCssLoader(isDev);
 
     const typescriptLoader = {
         test: /\.tsx?$/,

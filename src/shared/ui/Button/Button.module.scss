@@ -2,6 +2,20 @@
     cursor: pointer;
     color: var(--primary-color);
     padding: 6px 15px;
+
+    &:hover {
+        opacity: 0.8;
+        fill-opacity: 0.8;
+        stroke-opacity: 0.8;
+    }
+}
+
+.primary {
+    color: var(--primary-color);
+    padding: 0;
+    border: none;
+    background: none;
+    outline: none;
 }
 
 .clear {
@@ -9,6 +23,7 @@
     border: none;
     background: none;
     outline: none;
+    color: var(--secondary-color);
 }
 
 .outline_red {
@@ -18,14 +33,14 @@
 }
 
 .outline {
-    border: 3px solid var(--primary-color);
-    color: var(--primary-color);
+    border: 3px solid var(--secondary-color);
+    color: var(--secondary-color);
     background: none;
 }
 
 .background {
     background: var(--bg-color);
-    color: var(--primary-color);
+    color: var(--inverted-bg-color);
     border: none;
 }
 
@@ -43,6 +58,7 @@
 
 .square {
     padding: 0;
+    color: var(--bg-color);
 }
 
 .square.size_m {

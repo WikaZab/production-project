@@ -1,9 +1,9 @@
 import { counterReducer } from './model/slice/counterSlice';
 import { Counter } from './ui/Counter';
-import type { CounterShema } from './model/types/counterShema';
+import type { CounterSchema } from './model/types/counterSchema';
 
 export {
     counterReducer,
     Counter,
-    CounterShema
+    CounterSchema
 };

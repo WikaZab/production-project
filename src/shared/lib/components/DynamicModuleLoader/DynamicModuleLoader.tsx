@@ -2,12 +2,12 @@ import { FC, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 import {
     ReduxStoreWithManager,
-    StateShemaKey
+    StateSchemaKey
 } from 'app/providers/StoreProvider/config/StateSchema';
 import { Reducer } from '@reduxjs/toolkit';
 
 export type ReducerList = {
-    [keyname in StateShemaKey]?: Reducer;
+    [keyname in StateSchemaKey]?: Reducer;
 }
 
 interface DynamicModuleLoaderProps {
@@ -24,14 +24,14 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
 
     useEffect(() => {
         Object.entries(reducers).forEach(([keyname, reducer]) => {
-            store.reducerManager.add(keyname as StateShemaKey, reducer);
+            store.reducerManager.add(keyname as StateSchemaKey, reducer);
             dispatch({ type: `@INIT ${keyname} reducer` });
         });
 
         return () => {
             if (removeAfterUnmount) {
                 Object.entries(reducers).forEach(([keyname, reducer]) => {
-                    store.reducerManager.remove(keyname as StateShemaKey);
+                    store.reducerManager.remove(keyname as StateSchemaKey);
                     dispatch({ type: `@DESTROY ${keyname} reducer` });
                 });
             }
