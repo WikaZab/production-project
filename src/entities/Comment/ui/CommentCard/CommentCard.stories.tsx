@@ -6,7 +6,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { CommentCard } from './CommentCard';
 
 const meta: Meta<typeof CommentCard> = {
-    title: 'shared/CommentCard',
+    title: 'entities/Comment/CommentCard',
     component: CommentCard,
 
     argTypes: {},
@@ -16,7 +16,31 @@ const meta: Meta<typeof CommentCard> = {
 export default meta;
 type Story = StoryObj<typeof CommentCard>;
 
-export const Primary: Story = {
+export const Normal: Story = {
     args: {
+        comment: {
+            id: '2',
+            text: 'Comment second',
+            user: {
+                id: '1',
+                username: 'Pavel',
+                avatar: 'string',
+            },
+        },
+        isLoading: false,
+    },
+};
+export const isLoading: Story = {
+    args: {
+        comment: {
+            id: '2',
+            text: 'Comment second',
+            user: {
+                id: '1',
+                username: 'Pavel',
+                avatar: 'string',
+            },
+        },
+        isLoading: true,
     },
 };

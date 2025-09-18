@@ -15,14 +15,18 @@ import { To } from 'history';
 import { NavigateOptions } from 'react-router';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailsCommentSchema } from 'pages/ArticleDetailsPage';
+import { AddComponentFormSchema } from 'features/addCommentForm';
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
+
+    // асинхронные редусеры
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
     articleDetailsComments?: ArticleDetailsCommentSchema;
+    addCommentForm?: AddComponentFormSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
