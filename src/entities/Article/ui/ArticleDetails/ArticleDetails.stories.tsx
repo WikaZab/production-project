@@ -5,18 +5,20 @@ import { Article, ArticleBlockType, ArticleType } from '../../model/types/articl
 import { ArticleDetails } from './ArticleDetails';
 
 const meta: Meta<typeof ArticleDetails> = {
-    title: 'entities/ArticleDetails',
+    title: 'entities/Article/ArticleDetails',
     component: ArticleDetails,
 
     argTypes: {},
     args: {},
 };
-
-export default meta;
-type Story = StoryObj<typeof ArticleDetails>;
 const article: Article = {
     id: '1',
     title: 'Javascript news',
+    user: {
+        id: '1',
+        username: 'admin',
+        avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu1wy2cSSjsOiauyUD7Top9PDXTM8h3-Q-8Q&s'
+    },
     subtitle: 'Что нового в JS за 2022 год?',
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,
@@ -50,14 +52,15 @@ const article: Article = {
     ],
 };
 
+export default meta;
+type Story = StoryObj<typeof ArticleDetails>;
+
 export const Primary: Story = {
     args: {
     },
     decorators: [StoreDecorator({
-        articleDetails: {
-            data: article,
-        }
-    })]
+        articleDetails: { data: article }
+    })],
 };
 export const Loading: Story = {
     args: {},

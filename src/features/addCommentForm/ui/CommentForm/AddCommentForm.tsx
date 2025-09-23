@@ -3,7 +3,7 @@ import { Input } from 'shared/ui/Input/Input';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { useCallback } from 'react';
+import { memo, useCallback } from 'react';
 import cls from './AddCommentForm.module.scss';
 import { getAddCommentFormError, getAddCommentFormText } from '../../model/selectors/adCommentForrmSelectors';
 import { useAppDispatch } from '../../../../shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -20,7 +20,7 @@ export interface AddCommentFormProps {
 const reducers: ReducerList = {
     addCommentForm: addCommentFormReducer
 };
-const AddCommentForm = ({ className, onSendComment }: AddCommentFormProps) => {
+const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) => {
     const { t } = useTranslation('article');
     const error = useSelector(getAddCommentFormError);
     const text = useSelector(getAddCommentFormText);
@@ -53,6 +53,6 @@ const AddCommentForm = ({ className, onSendComment }: AddCommentFormProps) => {
         </DynamicModuleLoader>
 
     );
-};
+});
 
 export default AddCommentForm;

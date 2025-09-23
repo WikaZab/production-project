@@ -1,4 +1,6 @@
 // типы блоков
+import { User } from 'entities/User';
+
 export enum ArticleBlockType {
     CODE = 'CODE',
     IMAGE = 'IMAGE',
@@ -32,9 +34,14 @@ export enum ArticleType {
     SCIENCE = 'SCIENCE',
     ECONOMICS = 'ECONOMICS'
 }
+export enum ArticleView {
+    LIST = 'LIST', // СПИСОК
+    LATTICE = 'LATTICE', // РЕШЕТКА
+}
 export interface Article {
     id: string;
     title: string;
+    user: User;
     subtitle: string;
     img: string;
     views: number;

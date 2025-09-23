@@ -6,7 +6,7 @@ import { Country } from 'entities/Country';
 import avatar from 'shared/assets/tests/3b2758ad5492a76b578f7ee072e4e894.jpg';
 
 const meta: Meta<typeof ProfileCard> = {
-    title: 'entitis/ProfileCard',
+    title: 'entities/ProfileCard',
     component: ProfileCard,
     argTypes: {},
     args: {},
