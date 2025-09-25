@@ -19,6 +19,7 @@ import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useParams } from 'react-router-dom';
+import { Page } from 'shared/ui/Page/Page';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 interface ProfilePageProps {
@@ -82,7 +83,7 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
             reducers={reducers}
             removeAfterUnmount
         >
-            <div className={classNames('', {}, [className])}>
+            <Page className={classNames('', {}, [className])}>
                 <ProfilePageHeader />
                 {Array.isArray(validateErrors) && validateErrors.length > 0 && validateErrors.map((err) => (
                     <Text
@@ -105,7 +106,7 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
                     onChangeCurrency={onChangeCurrency}
                     onChangeCountry={onChangeCountry}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 });

@@ -58,7 +58,7 @@ export const ArticleListItem = memo(({ className, article, view }: ArticleListIt
                     )}
                     <div className={cls.footer}>
                         <Button
-                            theme={ButtonTheme.OUTLINE}
+                            theme={ButtonTheme.BACKGROUND_INVERTED}
                             onClick={onOpenArticle}
                         >
                             {t('Читать далее...')}

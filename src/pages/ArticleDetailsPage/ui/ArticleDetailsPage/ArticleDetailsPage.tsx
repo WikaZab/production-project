@@ -15,6 +15,7 @@ import { Button } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { fetchProfileData } from 'entities/Profile';
 import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById/fetchArticleById';
+import { Page } from 'shared/ui/Page/Page';
 import {
     fetchCommentByArticleId
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentByArticleId';
@@ -52,15 +53,15 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     });
     if (!id) {
         return (
-            <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 {t('Статья не найдена')}
-            </div>
+            </Page>
         );
     }
 
     return (
         <DynamicModuleLoader reducers={reducer} removeAfterUnmount>
-            <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <Button onClick={onBackToList}>
                     {t('Назад к списку...')}
                 </Button>
@@ -71,7 +72,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                 />
                 <AddCommentForm onSendComment={onSendComment} />
                 <CommentList isLoading={commentsIsLoading} comments={comments} />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };
