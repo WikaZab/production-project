@@ -17,11 +17,11 @@ export const StoreProvider = ({
     asyncReducers
 }: StoreProviderProps) => {
     // передаем ф-ю в фун-ю создания стора, чтобы добавить в экстра аргумент фанка
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const store = createReduxStore(
         initialState as StateSchema,
         asyncReducers as ReducersMapObject<StateSchema>,
-        navigate,
+        // navigate,
     );
 
     return (

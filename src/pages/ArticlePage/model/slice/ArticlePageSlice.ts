@@ -2,7 +2,7 @@ import { createEntityAdapter, createSlice, PayloadAction, } from '@reduxjs/toolk
 import { StateSchema } from 'app/providers/StoreProvider';
 import { Article, ArticleView } from 'entities/Article';
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
-import { fetchArticlesPage } from '../services/fetchArticlesList/fetchArticlesList';
+import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
 import { ArticlesPageSchema } from '../types/ArticlesPageSchema';
 
 const articlesAdapter = createEntityAdapter<Article>({
@@ -21,7 +21,8 @@ const articlePageSlice = createSlice({
         entities: {},
         view: ArticleView.LATTICE,
         page: 1,
-        hasMore: true
+        hasMore: true,
+        _inited: false,
     }),
     reducers: {
         setView: (state, action: PayloadAction<ArticleView>) => {
@@ -39,12 +40,12 @@ const articlePageSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
-            .addCase(fetchArticlesPage.pending, (state) => {
+            .addCase(fetchArticlesList.pending, (state) => {
                 state.isLoading = true;
                 state.error = undefined;
             })
             .addCase(
-                fetchArticlesPage.fulfilled,
+                fetchArticlesList.fulfilled,
                 (
                     state,
                     action: PayloadAction<Article[]>
@@ -52,9 +53,10 @@ const articlePageSlice = createSlice({
                     state.isLoading = false;
                     articlesAdapter.setMany(state, action.payload);
                     state.hasMore = action.payload.length > 0;
+                    state._inited = true;
                 }
             )
-            .addCase(fetchArticlesPage.rejected, (state, action) => {
+            .addCase(fetchArticlesList.rejected, (state, action) => {
                 state.error = action.payload;
                 state.isLoading = false;
             });
