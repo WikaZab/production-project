@@ -17,10 +17,12 @@ import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailsCommentSchema } from 'pages/ArticleDetailsPage';
 import { AddComponentFormSchema } from 'features/addCommentForm';
 import { ArticlesPageSchema } from 'pages/ArticlePage';
+import { ScrollSave } from 'features/ScrollSave';
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
+    scroll: ScrollSave;
 
     // асинхронные редусеры
     loginForm?: LoginSchema;
@@ -28,7 +30,8 @@ export interface StateSchema {
     articleDetails?: ArticleDetailsSchema;
     articleDetailsComments?: ArticleDetailsCommentSchema;
     addCommentForm?: AddComponentFormSchema;
-    articlesPage?: ArticlesPageSchema
+    articlesPage?: ArticlesPageSchema;
+
 }
 
 export type StateSchemaKey = keyof StateSchema;

@@ -7,6 +7,7 @@ import { userReducer } from 'entities/User';
 import { $api } from 'shared/api/api';
 import { NavigateOptions } from 'react-router';
 import { To } from 'history';
+import { scrollSaveReducer } from 'features/ScrollSave';
 import { createReducerManager } from './reduserManager';
 
 export function createReduxStore(
@@ -18,6 +19,7 @@ export function createReduxStore(
         ...asyncReducers,
         counter: counterReducer,
         user: userReducer,
+        scroll: scrollSaveReducer,
     };
     const reducerManager = createReducerManager(rootReducer);
     const extraArg: ThunkExtraArg = {
